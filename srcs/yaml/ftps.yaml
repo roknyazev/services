@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ftps #name
+  name: ftps
   labels:
-    app: ftps #установить эту метку
+    app: ftps
 spec:
   selector:
     matchLabels:

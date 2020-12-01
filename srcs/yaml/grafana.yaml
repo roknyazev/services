@@ -67,5 +67,5 @@ metadata:
     app: grafana
 type: Opaque
 stringData:
-  GF_SECURITY_ADMIN_USER: pmelinda
-  GF_SECURITY_ADMIN_PASSWORD: root
+  GF_SECURITY_ADMIN_USER: user
+  GF_SECURITY_ADMIN_PASSWORD: password
