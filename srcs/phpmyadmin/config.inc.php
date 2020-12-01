@@ -21,8 +21,8 @@ $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'cip-mysql';
 $cfg['Servers'][$i]['port'] = '3306';
-$cfg['Servers'][$i]['user'] = 'pmelinda';
-$cfg['Servers'][$i]['password'] = 'root';
+$cfg['Servers'][$i]['user'] = 'user';
+$cfg['Servers'][$i]['password'] = 'password';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
