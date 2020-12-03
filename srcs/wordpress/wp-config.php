@@ -30,8 +30,8 @@ define( 'DB_PASSWORD', 'password' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'cip-mysql:3306' );
-define( 'WP_HOME', 'http://192.168.99.100:5050/' ); # EXTERNAL IP
-define( 'WP_SITEURL', 'http://192.168.99.100:5050/' ); # EXTERNAL IP
+define( 'WP_HOME', 'http://192.168.99.101:5050/' ); # EXTERNAL IP
+define( 'WP_SITEURL', 'http://192.168.99.101:5050/' ); # EXTERNAL IP
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -50,14 +50,14 @@ define('FS_METHOD', 'direct');
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'pcCj,MCCPYlK^%ew6J{zGLy(zcMs5>V*egMm{|+B2!53+$|j3LQg2z@XCPTNe}kS');
-define( 'SECURE_AUTH_KEY',  ':w`7pUBim.hR@xQL0S>P;T+{EpTQf$1GcTUa[C.|>9_7ppadu[:QAJk>5({(Iyxa');
-define( 'LOGGED_IN_KEY',    'MtcU+p)!(+F)n*H]3_j^OGC+RF&ooF;/e+:25N*r>!fBXM]O-_6DesSHeGsHKr+Y');
-define( 'NONCE_KEY',        'a+xldYN%6Hvp:*Y>H0E`^5o[Td9|p@rX7A_wx2<ReHI;qB]OS:F[-E%DF;j7GYuA');
-define( 'AUTH_SALT',        '4JoNn9e*+[A;8[N8#^*U(5Av|J@B(X}5d2ZNydy;~[%obn<g*_^fdXWDC8yVcw6x');
-define( 'SECURE_AUTH_SALT', '0[&#% |G)-|.;SBRpkgWa1n#?yRts<B]ix2 kQYlCXe+oWmQB;BTwyVT$a#,06SD');
-define( 'LOGGED_IN_SALT',   'x!@@qM8/ztbwn02(1:wA!R|2osp-iQFT^h_!uDRA]|rJ--x YKbG)t*wnYvJnWw7');
-define( 'NONCE_SALT',       '-& 85>^cM<p5*aq,@}v u;7E QY J<VL4i7yLLbvoJEikO:4e;}&_ `sS][UZOHA');
+define('AUTH_KEY',         'E^fIsn`wsGS:m`5%!E`R-T-@)KK_@/Y>$jCO,Od:7]s<q^l|=%+*toVDSrhr[cq?');
+define('SECURE_AUTH_KEY',  'R|32|geD1|z#$VmV,6vwKMJ@2{Vii`{!D.pa_u:TL-$?<<~<q//9{QkaN@PrHK[%');
+define('LOGGED_IN_KEY',    'LyvOSK]<f{08E~B}TNIg|`+L{*y*$v =-S4BJW,D,cR%|}ycH{I2E< |SFV c[#!');
+define('NONCE_KEY',        '$;|jk>=_lf@5NMwguUA7p)e4HST(t{v;-TfsB+)gYVrfpv4FM><M_ALa9L:[o(Be');
+define('AUTH_SALT',        ']Y@;/0$}|;p4CJ]!tdZ {#x38RR7&v~bX54)q1*f/5}AID{B?hJw,MHk8Z)S<+K:');
+define('SECURE_AUTH_SALT', 'Fy7+;_qi@9{|BPtW!d~kxF]D*l<HRw>ghG8/9A^[]w-aEd?<|;g m<B8o@$RDKbh');
+define('LOGGED_IN_SALT',   'ezK0Gn~[S~u|Pt<aaDyo}s-l{WJClG1`v8k+ .LV0OL;IgN:LINv#fjo:BPff_#~');
+define('NONCE_SALT',       '|AJYxL2l+D~>jLY-?;ZC},b#{2b<|3U2zXV-0UYe*7L+/X9Ty B.#OL5|;_:S.K>');
 
 /**#@-*/
 
