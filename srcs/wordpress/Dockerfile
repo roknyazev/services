@@ -5,14 +5,11 @@ ENV __WORDPRESS_DB_USERNAME__=user
 ENV __WORDPRESS_DB_PASSWORD__=password
 ENV __WORDPRESS_DB_HOST__=cip-mysql
 ENV __WORDPRESS_DB_PORT__=3306
-ENV __WORDPRESS_DB_TABLE_PREFIX__=aha_archi_wp_
-#usefull for the siteurl in the wordpress database
 ENV	__WORDPRESS_SVC_IP__=192.168.99.101
 ENV __WORDPRESS_SVC_PORT__=5050
 
 RUN apk update \
 	&& apk add nginx \
-	#add all the php dependencies including php-fpm
 	&& apk add php7 \
 		php7-bcmath \
        	php7-ctype \
@@ -38,21 +35,15 @@ RUN apk update \
        	php7-soap \
        	php7-xml \
        	php7-zip \
-	# download the wordpress tar ball
 	&& wget -P /tmp/ http://wordpress.org/latest.tar.gz \
-	# install the wp-cli and make it usable through "wp"
 	&& wget -P /tmp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-	&& chmod +x /tmp/wp-cli.phar && mv /tmp/wp-cli.phar /usr/sbin/wp \
-	# clean cache
-	&& rm -rf /var/cache/apk/*
+	&& chmod +x /tmp/wp-cli.phar && mv /tmp/wp-cli.phar /usr/sbin/wp
 
 COPY /srcs/bootstrap.sh /usr/sbin
-
 COPY ./srcs/srcs_wordpress/setup_wordpress.sh /usr/sbin
 COPY ./srcs/srcs_wordpress/wp_salt_keys_reset.sh /usr/sbin/
 COPY ./srcs/srcs_wordpress/config_wordpress_site.sh /usr/sbin
 COPY ./srcs/srcs_wordpress/content_first_post.txt /tmp
-
 COPY ./srcs/srcs_nginx/setup_nginx.sh /usr/sbin
 COPY ./srcs/srcs_nginx/wp_server.conf /etc/nginx/conf.d
 

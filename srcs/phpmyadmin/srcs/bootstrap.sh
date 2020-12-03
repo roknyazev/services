@@ -3,14 +3,6 @@
 setup_nginx.sh
 setup_phpmyadmin.sh
 
-#start php-fpm7
-# php-fpm7
-# start nginx as a non daemon
-# nginx -g "daemon off;"
-
-# We have two services running in the same container,
-# We will avoid using a Openrc or supervisord, full fledged inint processes.
-
 nginx
 status=$?
 if [ $status -ne 0 ];
@@ -19,7 +11,6 @@ then
 	exit $status
 fi
 
-# Start the second process
 php-fpm7
 status=$?
 if [ $status -ne 0 ];
@@ -34,8 +25,6 @@ do
 	PROCESS_1_STATUS=$?
 	ps aux |grep php-fpm |grep -q -v grep
 	PROCESS_2_STATUS=$?
-	# If the greps above find anything, they exit with 0 status
-	# If they are not both 0, then something is wrong
 	if [ $PROCESS_1_STATUS -ne 0 -o $PROCESS_2_STATUS -ne 0 ];
 	then
 		echo "One of the processes has already exited."

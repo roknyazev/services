@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# check if yes or no there is already a database set up at the location + name
-# that wp-config.php points to.
 
 cd /usr/share/webapps/wordpress
 wp core is-installed > /dev/null 2>&1
@@ -15,8 +13,6 @@ fi
 
 echo "wp-cli: wordpress not installed yet at address: $__WORDPRESS_DB_HOST__ with database: $__WORDPRESS_DB_NAME__ "
 
-#trying ten times to connect to database, so it gives it the time to boot.
-# and if it completely fails, then we abort the container
 LIMIT=11
 while :
 do
@@ -37,16 +33,11 @@ do
 	fi
 done
 
-wp core install --url=http://${__WORDPRESS_SVC_IP__}:${__WORDPRESS_SVC_PORT__} --title="Charmstr's_site" --admin_user=user --admin_password=password --admin_email=user@42.fr --skip-email
-#clean the file
-#:> /tmp/postid
-wp term create category haha
-wp post create /tmp/content_first_post.txt --post_author=1 --post_category="haha" --post_title="my first post" --post_excerpt="about confinment" --post_status=publish | awk '{gsub(/[.]/, ""); print $4}' > /tmp/postid
-#echo -n "created a post with id: "; cat /tmp/postid; echo ""
-# creating different users
-wp user create user1 user1@example.com --role=editor --user_pass=user1
-wp user create user2 user2@example.com --role=author --user_pass=user2
-wp user create user3 user3@example.com --role=contributor --user_pass=user3
-wp user create user4 user4@example.com --role=subscriber --user_pass=user4
-wp theme activate twentyseventeen
-wp option update blogdescription "Just another ft_services project at 42"
+wp core install --url=http://${__WORDPRESS_SVC_IP__}:${__WORDPRESS_SVC_PORT__} --title="Ну здарова" --admin_user=user --admin_password=password --admin_email=user@student.21-school.ru --skip-email
+wp term create category category0
+wp post create /tmp/content_first_post.txt --post_author=1 --post_category="category0" --post_title="Анекдот" --post_status=publish
+wp user create user1 user1@example.com --role=subscriber --user_pass=password1
+wp user create user2 user2@example.com --role=subscriber --user_pass=password2
+wp user create user3 user3@example.com --role=subscriber --user_pass=password3
+wp user create user4 user4@example.com --role=subscriber --user_pass=password4
+wp option update blogdescription "Как оно?"
