@@ -4,11 +4,11 @@ server {
 
 	include /etc/nginx/snippets/self-signed.conf;
 
-	server_name loalhost www.localhost;
-	location / {
-		root /var/www/my_server;
-		index index.php index.html index.htm;
-	}
+	#server_name loalhost www.localhost;
+	#location / {
+	#	root /var/www/my_server;
+	#	index index.php index.html index.htm;
+	#}
 	
 	#to make sure it works with or wihout the trailing '/'
 	#it shoudl also work with remaning path.

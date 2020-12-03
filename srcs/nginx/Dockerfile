@@ -26,7 +26,9 @@ EXPOSE 80 443 22
 ### NGINX SETUP ### see the setup_nginx.sh script for more details.
 COPY ./srcs/srcs_nginx/setup_nginx.sh /usr/sbin
 COPY ./srcs/srcs_nginx/server_config  /tmp/
-COPY ./srcs/srcs_nginx/index.html /var/www/my_server/index.html
+
+#COPY ./srcs/srcs_nginx/index.html /var/www/my_server/index.html
+
 COPY ./srcs/srcs_nginx/self-signed.conf /etc/nginx/snippets/
 
 ### SSH SETUP ###
